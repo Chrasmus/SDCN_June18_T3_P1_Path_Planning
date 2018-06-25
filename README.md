@@ -17,7 +17,7 @@
 
 [//]: # (Image References)
 
-[Pp1]: ./Path_Planning_2018-06-25.png "Particle filter simulation"
+[Pp1]: ./Path_Planning_2018-06-25.png "Path Planning"
 
 The software is based on the framework, that was provided by Udacity for this project.
 The initial path planner is based on the lessons and the accompanying video with guidelines and examples.
@@ -26,6 +26,7 @@ My primary adition to the code is a path planner, that checks for other cars in 
 The brake is set approximately 10 m/s2 and the acceleration is set to approximately 7.5 m/s2 (code: main.cpp lines 365-371).
 
 During the test it was possible to drive for more than 10 minutes, som 6.5 miles, without any errors (screenshot from simulator):
+
 ![alt text][Pp1]
 
 
