@@ -17,12 +17,12 @@
 
 [//]: # (Image References)
 
-[Pp1]: ./Path_Planning_2018-06-25.png "Path Planning"
+[Pp1]: ./Path_Planning.png "Path Planning"
 
 The software is based on the framework, that was provided by Udacity for this project.
 The initial path planner is based on the lessons and the accompanying video with guidelines and examples.
 
-My primary adition to the code is a path planner, that checks for other cars in the other lanes, when the car is coming too close to the car in front of it (at 40 meters, code: main.cpp line 277). The path planner (code: main.cpp, lines 289-371) check the other lanes in a distance of 30 meters in front of and behind the cars. If it is too close to the car in front of it _and_ a lane beside is free, the car changes lanes.
+My primary adition to the code is a path planner, that checks for other cars in the other lanes, when the car is coming too close to the car in front of it (at 40 meters, code: main.cpp line 277). The path planner (code: main.cpp, lines 289-371) checks the other lanes in a distance of 30 meters in front of and behind the cars. If it is too close to the car in front of it _and_ a lane beside is free, the car changes lanes.
 The brake is set approximately 10 m/s2 and the acceleration is set to approximately 7.5 m/s2 (code: main.cpp lines 365-371).
 
 During the test it was possible to drive for more than 10 minutes, som 6.5 miles, without any errors (screenshot from simulator):
