@@ -1,6 +1,45 @@
+### **Path Planning**
+
+## Writeup
+---
+
+### Udacity Course, October 2017 cohort
+
+**Self-Driving Car Engineer Nanodegree Program**
+
+**Project 'MPC Controller', June 2018**
+
+**Claus H. Rasmussen**
+
+---
+
+# Drive a car down a highway with other cars using your own path planner, in the Udacity simulator.
+
+[//]: # (Image References)
+
+[Pp1]: ./Path_Planning_2018-06-25.png "Particle filter simulation"
+
+The software is based on the framework, that was provided by Udacity for this project.
+The initial path planner is based on the lessons and the accompanying video with guidelines and examples.
+
+My primary adition to the code is a path planner, that checks for other cars in the other lanes, when the car is coming too close to the car in front of it (at 40 meters, code: main.cpp line 277). The path planner (code: main.cpp, lines 289-371) check the other lanes in a distance of 30 meters in front of and behind the cars. If it is too close to the car in front of it _and_ a lane beside is free, the car changes lanes.
+The brake is set approximately 10 m/s2 and the acceleration is set to approximately 7.5 m/s2 (code: main.cpp lines 365-371).
+
+During the test it was possible to drive for more than 10 minutes, som 6.5 miles, without any errors (screenshot from simulator):
+![alt text][Pp1]
+
+
+Todo next time: make the path planner cost based.
+
+---
+---
+---
+
+## **This section was provided by Udacity to help set up the coding environment etc.**
+
 # CarND-Path-Planning-Project
 Self-Driving Car Engineer Nanodegree Program
-   
+
 ### Simulator.
 You can download the Term3 Simulator which contains the Path Planning Project from the [releases tab (https://github.com/udacity/self-driving-car-sim/releases/tag/T3_v1.2).
 
@@ -38,13 +77,13 @@ Here is the data provided from the Simulator to the C++ Program
 #### Previous path data given to the Planner
 
 //Note: Return the previous list but with processed points removed, can be a nice tool to show how far along
-the path has processed since last time. 
+the path has processed since last time.
 
 ["previous_path_x"] The previous list of x points previously given to the simulator
 
 ["previous_path_y"] The previous list of y points previously given to the simulator
 
-#### Previous path's end s and d values 
+#### Previous path's end s and d values
 
 ["end_path_s"] The previous list's last point's frenet s value
 
@@ -52,7 +91,7 @@ the path has processed since last time.
 
 #### Sensor Fusion Data, a list of all other car's attributes on the same side of the road. (No Noise)
 
-["sensor_fusion"] A 2d vector of cars and then that car's [car's unique ID, car's x position in map coordinates, car's y position in map coordinates, car's x velocity in m/s, car's y velocity in m/s, car's s position in frenet coordinates, car's d position in frenet coordinates. 
+["sensor_fusion"] A 2d vector of cars and then that car's [car's unique ID, car's x position in map coordinates, car's y position in map coordinates, car's x velocity in m/s, car's y velocity in m/s, car's s position in frenet coordinates, car's d position in frenet coordinates.
 
 ## Details
 
@@ -82,7 +121,7 @@ A really helpful resource for doing this project and creating smooth trajectorie
   * Run either `install-mac.sh` or `install-ubuntu.sh`.
   * If you install from source, checkout to commit `e94b6e1`, i.e.
     ```
-    git clone https://github.com/uWebSockets/uWebSockets 
+    git clone https://github.com/uWebSockets/uWebSockets
     cd uWebSockets
     git checkout e94b6e1
     ```
@@ -137,4 +176,3 @@ still be compilable with cmake and make./
 
 ## How to write a README
 A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
-

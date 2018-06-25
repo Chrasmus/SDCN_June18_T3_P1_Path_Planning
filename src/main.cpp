@@ -307,12 +307,12 @@ int main() {
                 // if using previous points we can project s value outward in time
                 check_car_s += ((double)prev_size * 0.02 * check_speed);
 
-                // look for s values greater than 50 in front of the car
+                // look for s values greater than 30 in front of the car
                 if ((check_car_s > car_s) && ((check_car_s - car_s) < 30))
                 {
                   clear_ahead = false;
                 }
-                // look for s values greater than 50 behind the car
+                // look for s values greater than 30 behind the car
                 if ((check_car_s < car_s) && ((car_s - check_car_s) < 30))
                 {
                   clear_behind = false;
